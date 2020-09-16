@@ -5,7 +5,7 @@ const msalConfig = {
     auth: {
         clientId: "8e3975a0-c07d-4222-9aa5-3075e5f9e385",
         authority: "https://login.microsoftonline.com/common",
-        redirectUri: "",
+        redirectUri: "https://federation.vuw.ac.nz/adfs/ls/",
     },
     cache: {
         cacheLocation: "sessionStorage", // This configures where your cache will be stored
