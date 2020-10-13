@@ -88,7 +88,7 @@ function readMail() {
 
 function seeTeams() {
     getTokenPopup(tokenRequest).then(response => {
-        callMSGraph(graphConfig.graphMailEndpoint, response.accessToken, updateUI);
+        callMSGraph(graphConfig.graphOnedriveEndpoint, response.accessToken, updateUI);
     }).catch(error => {
         console.error(error);
     });
