@@ -43,6 +43,6 @@ const loginRequest = {
 
 // Add here the scopes to request when obtaining an access token for MS Graph API
 const tokenRequest = {
-    scopes: ["User.Read", "Mail.Read", "Drive.Read"],
+    scopes: ["User.Read", "Mail.Read", "Drive.Read", "Teams.Read", "Team.Read"],
     forceRefresh: false // Set this to "true" to skip a cached token and go to the server to get a new token
 };
