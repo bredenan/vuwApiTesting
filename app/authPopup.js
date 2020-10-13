@@ -86,9 +86,18 @@ function readMail() {
 }
 
 
-function seeTeams() {
+function seeFiles() {
     getTokenPopup(tokenRequest).then(response => {
         callMSGraph(graphConfig.graphOnedriveEndpoint, response.accessToken, updateUI);
+    }).catch(error => {
+        console.error(error);
+    });
+}
+
+
+function seeTeams() {
+    getTokenPopup(tokenRequest).then(response => {
+        callMSGraph(graphConfig.graphTeamsEndpoint, response.accessToken, updateUI);
     }).catch(error => {
         console.error(error);
     });
