@@ -85,4 +85,13 @@ function readMail() {
     });
 }
 
+
+function seeTeams() {
+    getTokenPopup(tokenRequest).then(response => {
+        callMSGraph(graphConfig.graphMailEndpoint, response.accessToken, updateUI);
+    }).catch(error => {
+        console.error(error);
+    });
+}
+
 loadPage();
