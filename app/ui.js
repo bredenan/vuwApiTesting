@@ -63,5 +63,9 @@ function updateUI(data, endpoint) {
                 }
             });
         }
+    } else {
+        console.log("Unknown endpoint:" + endpoint);
+        console.log(JSON.stringify(data));
+        console.log(data);
     }
 }
