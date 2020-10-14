@@ -46,7 +46,7 @@ const tokenRequest = {
     scopes: ["User.Read", "Mail.Read", "Files.Read", "Files.Read.All", "Files.ReadWrite", "Files.ReadWrite.All", "Sites.Read.All", "Sites.ReadWrite.All", 
     // "Team.ReadBasic.All", // requires admin consent
     // "TeamSettings.Read.All", "TeamSettings.ReadWrite.All", "User.Read.All", "Directory.Read.All",  // requires user consent
-    "User.ReadWrite.All", "Directory.ReadWrite.All", "Directory.AccessAsUser.All"
+    // "User.ReadWrite.All", "Directory.ReadWrite.All", "Directory.AccessAsUser.All"
     ],
     forceRefresh: true // false // Set this to "true" to skip a cached token and go to the server to get a new token
 };
