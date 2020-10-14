@@ -20,6 +20,8 @@ function showWelcomeMessage(account) {
 function updateUI(data, endpoint) {
     console.log('Graph API responded at: ' + new Date().toString());
 
+    console.log(data);
+
     if (endpoint === graphConfig.graphMeEndpoint) {
         const title = document.createElement('p');
         title.innerHTML = "<strong>Title: </strong>" + data.jobTitle;
@@ -73,6 +75,5 @@ function updateUI(data, endpoint) {
         //     console.error("Error JSON parsing data");
         //     console.error(e);
         // }
-        console.log(data);
     }
 }
