@@ -3,5 +3,7 @@ const graphConfig = {
     graphMeEndpoint: "https://graph.microsoft.com/v1.0/me",
     graphMailEndpoint: "https://graph.microsoft.com/v1.0/me/messages",
     graphOnedriveEndpoint: "https://graph.microsoft.com/v1.0/me/drive/recent",
-    graphTeamsEndpoint: "https://graph.microsoft.com/v1.0/me/transitiveMemberOf/microsoft.graph.group?$count=true"
+    graphGroupsEndpoint: "https://graph.microsoft.com/v1.0/me/transitiveMemberOf/microsoft.graph.group?$count=true",
+    graphTeamsEndpoint: "https://graph.microsoft.com/v1.0/me/joinedTeams"
+    
 };
