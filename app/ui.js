@@ -67,12 +67,12 @@ function updateUI(data, endpoint) {
         }
     } else {
         console.log("Unknown endpoint:" + endpoint);
-        try {
-            console.log(JSON.stringify(data));
-        } catch (e) {
-            console.error("Error JSON parsing data");
-            console.error(e);
-        }
+        // try {
+        //     console.log(JSON.stringify(data));
+        // } catch (e) {
+        //     console.error("Error JSON parsing data");
+        //     console.error(e);
+        // }
         console.log(data);
     }
 }
