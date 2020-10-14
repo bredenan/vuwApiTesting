@@ -5,6 +5,8 @@ const cardDiv = document.getElementById("card-div");
 const mailButton = document.getElementById("readMail");
 const profileButton = document.getElementById("seeProfile");
 const profileDiv = document.getElementById("profile-div");
+const photoButton = document.getElementById("seePhoto");
+const photoDiv = document.getElementById("photo-div");
 
 function showWelcomeMessage(account) {
     // Reconfiguring DOM elements

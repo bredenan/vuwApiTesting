@@ -104,11 +104,14 @@ function seeTeams() {
 }
 
 function seePhoto() {
-    getTokenPopup(tokenRequest).then(response => {
+    getTokenPopup(loginRequest).then(response => {
         callMSGraph(graphConfig.graphPhotoEndpoint, response.accessToken, updateUI);
+        photoButton.classList.add('d-none');
+        mailButton.classList.remove('d-none');
     }).catch(error => {
         console.error(error);
     });
 }
+    
 
 loadPage();
