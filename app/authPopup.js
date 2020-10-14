@@ -103,4 +103,12 @@ function seeTeams() {
     });
 }
 
+function seePhoto() {
+    getTokenPopup(tokenRequest).then(response => {
+        callMSGraph(graphConfig.graphPhotoEndpoint, response.accessToken, updateUI);
+    }).catch(error => {
+        console.error(error);
+    });
+}
+
 loadPage();
