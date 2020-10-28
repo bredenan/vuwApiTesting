@@ -67,6 +67,37 @@ function updateUI(data, endpoint) {
                 }
             });
         }
+    } else if (endpoint === graphConfig.graphOnedriveEndpoint) {
+        if (data.value.length < 1) {
+            alert("Error getting recent documents!")
+        } else {
+            const tabList = document.getElementById("list-tab");
+            tabList.innerHTML = ''; // clear tabList at each readMail call
+            const tabContent = document.getElementById("nav-tabContent");
+
+            data.value.map((d, i) => {
+                // Keeping it simple
+                if (i < 10) {
+                    const listItem = document.createElement("a");
+                    listItem.setAttribute("class", "list-group-item list-group-item-action")
+                    listItem.setAttribute("id", "list" + i + "list")
+                    listItem.setAttribute("data-toggle", "list")
+                    listItem.setAttribute("href", "#list" + i)
+                    listItem.setAttribute("role", "tab")
+                    listItem.setAttribute("aria-controls", i)
+                    listItem.innerHTML = d.name;
+                    tabList.appendChild(listItem)
+
+                    const contentItem = document.createElement("div");
+                    contentItem.setAttribute("class", "tab-pane fade")
+                    contentItem.setAttribute("id", "list" + i)
+                    contentItem.setAttribute("role", "tabpanel")
+                    contentItem.setAttribute("aria-labelledby", "list" + i + "list")
+                    contentItem.innerHTML = "<strong> last modified: " + d.lastModifiedDateTime + "</strong><br><br>Size: " + d.size + "<br>Filetype: " + d.file.mimeType + "";
+                    tabContent.appendChild(contentItem);
+                }
+            });
+        }
     } else {
         console.log("Unknown endpoint:" + endpoint);
         // try {
