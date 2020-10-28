@@ -94,7 +94,7 @@ function updateUI(data, endpoint) {
                     contentItem.setAttribute("role", "tabpanel")
                     contentItem.setAttribute("aria-labelledby", "list" + i + "list")
                     contentItem.innerHTML = "<strong> last modified: " + d.lastModifiedDateTime + "</strong><br><br>Size: " + d.size + "<br>Filetype: " + d.file.mimeType + "";
-                    tabList.appendChild(contentItem);
+                    tabList.appendChild(contentItem); 
                 }
             });
         }
