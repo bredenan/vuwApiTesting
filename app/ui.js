@@ -1,4 +1,4 @@
-s
+// Last modified: 2020/10/29 13:27:51
 
 // Select DOM elements to work with
 const welcomeDiv = document.getElementById("WelcomeMessage");
