@@ -1,4 +1,4 @@
-// Last modified: 2020/10/29 13:33:17
+// Last modified: 2020/10/29 15:31:52
 
 // Select DOM elements to work with
 const welcomeDiv = document.getElementById("WelcomeMessage");
@@ -95,7 +95,9 @@ function updateUI(data, endpoint) {
                     contentItem.setAttribute("id", "list" + i)
                     contentItem.setAttribute("role", "tabpanel")
                     contentItem.setAttribute("aria-labelledby", "list" + i + "list")
-                    contentItem.innerHTML = "<strong>Name: " + d.name + "</strong><br>last modified: " + d.lastModifiedDateTime + "<br>Size: " + d.size + "<br>Filetype: " + d.file.mimeType + "<br><a href='" + d.webUrl + "'>Link</a><br>";
+                    contentItem.innerHTML = "<strong>Name: " + d.name + "</strong><br>last modified: " + d.lastModifiedDateTime + "<br>Size: " + d.size + "<br>";
+                    contentItem.innerHTML += "Filetype: <em class=\"result_flag flag_pdf\">pdf</em>" + d.file.mimeType;
+                    contentItem.innerHTML += "<br><a href='" + d.webUrl + "'>Link</a><br>";
                     tabList.appendChild(contentItem); 
                 }
             });
