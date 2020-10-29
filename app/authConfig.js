@@ -1,3 +1,5 @@
+// Last modified: 2020/10/29 13:26:56
+
 // Config object to be passed to Msal on creation.
 // For a full list of msal.js configuration parameters, 
 // visit https://azuread.github.io/microsoft-authentication-library-for-js/docs/msal/modules/_authenticationparameters_.html

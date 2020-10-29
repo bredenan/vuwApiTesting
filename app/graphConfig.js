@@ -1,3 +1,5 @@
+// Last modified: 2020/10/29 13:26:53
+
 // Add here the endpoints for MS Graph API services you would like to use.
 const graphConfig = {
     graphMeEndpoint: "https://graph.microsoft.com/v1.0/me",
@@ -7,4 +9,4 @@ const graphConfig = {
     graphTeamsEndpoint: "https://graph.microsoft.com/v1.0/me/joinedTeams",
     graphPhotoEndpoint: "https://graph.microsoft.com/v1.0/me/photo/$value"
     
-};
+}; 

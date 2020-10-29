@@ -1,3 +1,5 @@
+s
+
 // Select DOM elements to work with
 const welcomeDiv = document.getElementById("WelcomeMessage");
 const signInButton = document.getElementById("SignIn");
