@@ -1,4 +1,4 @@
-// Last modified: 2020/10/29 13:27:51
+// Last modified: 2020/10/29 13:31:13
 
 // Select DOM elements to work with
 const welcomeDiv = document.getElementById("WelcomeMessage");
@@ -80,22 +80,22 @@ function updateUI(data, endpoint) {
             data.value.map((d, i) => {
                 // Keeping it simple
                 if (i < 10) {
-                    const listItem = document.createElement("a");
-                    listItem.setAttribute("class", "list-group-item list-group-item-action")
-                    listItem.setAttribute("id", "list" + i + "list")
-                    listItem.setAttribute("data-toggle", "list")
-                    listItem.setAttribute("href", "#list" + i)
-                    listItem.setAttribute("role", "tab")
-                    listItem.setAttribute("aria-controls", i)
-                    listItem.innerHTML = d.name;
-                    tabList.appendChild(listItem)
+                    // const listItem = document.createElement("a");
+                    // listItem.setAttribute("class", "list-group-item list-group-item-action")
+                    // listItem.setAttribute("id", "list" + i + "list")
+                    // listItem.setAttribute("data-toggle", "list")
+                    // listItem.setAttribute("href", "#list" + i)
+                    // listItem.setAttribute("role", "tab")
+                    // listItem.setAttribute("aria-controls", i)
+                    // listItem.innerHTML = d.name;
+                    // tabList.appendChild(listItem)
 
                     const contentItem = document.createElement("div");
                     contentItem.setAttribute("class", "tab-pane fade")
                     contentItem.setAttribute("id", "list" + i)
                     contentItem.setAttribute("role", "tabpanel")
                     contentItem.setAttribute("aria-labelledby", "list" + i + "list")
-                    contentItem.innerHTML = "<strong> last modified: " + d.lastModifiedDateTime + "</strong><br><br>Size: " + d.size + "<br>Filetype: " + d.file.mimeType + "";
+                    contentItem.innerHTML = "<strong>Name: " + d.name + "</strong><br>last modified: " + d.lastModifiedDateTime + "<br>Size: " + d.size + "<br>Filetype: " + d.file.mimeType + "";
                     tabList.appendChild(contentItem); 
                 }
             });
