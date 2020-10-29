@@ -1,4 +1,4 @@
-// Last modified: 2020/10/29 15:59:43
+// Last modified: 2020/10/29 16:35:35
 
 // Select DOM elements to work with
 const welcomeDiv = document.getElementById("WelcomeMessage");
@@ -95,11 +95,25 @@ function updateUI(data, endpoint) {
                     contentItem.setAttribute("id", "list" + i)
                     contentItem.setAttribute("role", "tabpanel")
                     contentItem.setAttribute("aria-labelledby", "list" + i + "list")
-                    contentItem.innerHTML = "<strong>Name: " + d.name + "</strong><br>last modified: " + d.lastModifiedDateTime + "<br>Size: " + d.size + "<br>";
-                    contentItem.innerHTML += '<div class="o365cs-base" aria-hidden="true"><span class="ms-Icon ms-Icon--OutlookLogo _1NTwdglUKLpHkf8sgkCoVl ms-svg-Icon" role="presentation" style="display: inline-block;"></span></div>';
-                    contentItem.innerHTML += 'Filetype: <span class="ms-Icon ms-Icon--WordLogo _1NTwdglUKLpHkf8sgkCoVl ms-svg-Icon" role="presentation" style="display: inline-block;"></span><em class=\"result_flag flag_pdf\">pdf</em>' + d.file.mimeType;
-                    contentItem.innerHTML += "<br><a href='" + d.webUrl + "'>Link</a><br>";
-                    tabList.appendChild(contentItem); 
+
+                    var fileType = "ListsLogo";
+                    if (d.file.mimeType.indexOf("application/pdf") >= 0) {
+                        fileType = "WhiteboardLogo";
+                    } else if (d.file.mimeType.indexOf("excel") >= 0) {
+                        fileType = "ExcelLogo";
+                    } else if (d.file.mimeType.indexOf("sheet") >= 0) {
+                        fileType = "WordLogo";
+                    }
+
+                    contentItem.innerHTML = '<div class="o365cs-base tab-pane fade" aria-hidden="true" id="list0" role="tabpanel" aria-labelledby="list0list">';
+                    contentItem.innerHTML += '<span class="ms-Icon ms-Icon--' + fileType + ' _1NTwdglUKLpHkf8sgkCoVl ms-svg-Icon" role="presentation" style="display: inline-block;"></span>';
+                    contentItem.innerHTML += '<a href="' + d.webUrl + '">' + d.name + '</a> last modified: ' + d.lastModifiedDateTime + ' ' + d.size + 'B';
+                    contentItem.innerHTML += ' </div>'
+
+                    // contentItem.innerHTML += '<div class="o365cs-base" aria-hidden="true"><span class="ms-Icon ms-Icon--OutlookLogo _1NTwdglUKLpHkf8sgkCoVl ms-svg-Icon" role="presentation" style="display: inline-block;"></span></div>';
+                    // contentItem.innerHTML += 'Filetype: <span class="ms-Icon ms-Icon--WordLogo _1NTwdglUKLpHkf8sgkCoVl ms-svg-Icon" role="presentation" style="display: inline-block;"></span><em class=\"result_flag flag_pdf\">pdf</em>' + d.file.mimeType;
+                    // contentItem.innerHTML += "<br><a href='" + d.webUrl + "'>Link</a><br>";
+                    tabList.appendChild(contentItem);
                 }
             });
         }
