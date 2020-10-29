@@ -1,0 +1,93 @@
+<script>
+    // Last modified: 2020/10/29 14:19:02
+</script>
+
+<h4>Embed 2</h4>
+
+<!-- msal.min.js can be used in the place of msal.js; included msal.js to make debug easy -->
+<script type="text/javascript" src="https://alcdn.msauth.net/browser/2.0.0/js/msal-browser.js"
+  integrity="sha384-BqIcDtzVkr3wRGsSrk+iJJNm9GSdUsP0I2MplbnhPPc+I1l1d+dkKbcnqgNddGWX" crossorigin="anonymous"></script>
+
+<!-- msal.js with a fallback to backup CDN -->
+<script type="text/javascript">
+  if (typeof Msal === 'undefined') document.write(unescape("%3Cscript src='https://alcdn.msftauth.net/browser/2.0.0/js/msal-browser.js' type='text/javascript' integrity='sha384-BqIcDtzVkr3wRGsSrk+iJJNm9GSdUsP0I2MplbnhPPc+I1l1d+dkKbcnqgNddGWX' crossorigin='anonymous' %3E%3C/script%3E"));
+</script>
+
+<!-- adding Bootstrap 4 for UI components  -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="/">MS Identity Platform</a>
+  <div class="btn-group ml-auto dropleft">
+    <!-- <button type="button" id="SignIn" class="btn btn-secondary" onclick="signIn()">
+          Sign In
+        </button> -->
+  </div>
+</nav>
+<br>
+<h5 class="card-header text-center">Vanilla JavaScript SPA calling MS Graph API with MSAL.JS</h5>
+<br>
+<div class="row" style="margin:auto">
+  <div id="card-div" class="col-md-3" style="display:none">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title" id="WelcomeMessage">Please sign-in to see your profile and read your mails</h5>
+        <div id="profile-div"></div>
+        <div id="photo-div"></div>
+        <br>
+        <br>
+        <button class="btn btn-primary" id="seeProfile" onclick="seeProfile()">See Profile</button>
+        <br>
+        <br>
+        <button class="btn btn-primary" id="readMail" onclick="readMail()">Read Mails</button>
+        <br>
+        <br>
+        <button class="btn btn-primary" id="seeFiles" onclick="seeFiles()">See Recent Files</button>
+        <br>
+        <br>
+        <button class="btn btn-primary" id="seeTeams" onclick="seeTeams()">See Teams</button>
+        <br>
+        <br>
+        <button class="btn btn-primary" id="seePhoto" onclick="seePhoto()">See Photo</button>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="col-md-4">
+    <div class="list-group" id="list-tab" role="tablist">
+    </div>
+  </div>
+  <div class="col-md-5">
+    <div class="tab-content" id="nav-tabContent">
+    </div>
+  </div>
+</div>
+<br />
+<br />
+<br />
+
+<!-- importing bootstrap.js and supporting js libraries -->
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"></script>
+   -->
+<!-- importing app scripts (load order is important) -->
+<script type="text/javascript" src="./?a=1886605:app/authConfig.js"></script>
+<script type="text/javascript" src="./?a=1886605:app/graphConfig.js"></script>
+<script type="text/javascript" src="./?a=1886605:app/ui.js"></script>
+
+<!-- <script type="text/javascript" src="./?a=1886605:app/authRedirect.js"></script>   -->
+<!-- uncomment the above line and comment the line below if you would like to use the redirect flow -->
+<script type="text/javascript" src="./?a=1886605:app/authPopup.js"></script>
+<script type="text/javascript" src="./?a=1886605:app/graph.js"></script>
+<script>
+  $(document).ready(function () {
+    console.log("Getting here");
+  });
+
+</script>
