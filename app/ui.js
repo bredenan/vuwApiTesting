@@ -1,4 +1,4 @@
-// Last modified: 2020/10/29 16:35:35
+// Last modified: 2020/10/29 16:39:36
 
 // Select DOM elements to work with
 const welcomeDiv = document.getElementById("WelcomeMessage");
@@ -91,10 +91,11 @@ function updateUI(data, endpoint) {
                     // tabList.appendChild(listItem)
 
                     const contentItem = document.createElement("div");
-                    contentItem.setAttribute("class", "tab-pane fade")
+                    contentItem.setAttribute("class", "o365cs-base tab-pane fade")
                     contentItem.setAttribute("id", "list" + i)
                     contentItem.setAttribute("role", "tabpanel")
                     contentItem.setAttribute("aria-labelledby", "list" + i + "list")
+                    contentItem.setAttribute("aria-hidden", "true")
 
                     var fileType = "ListsLogo";
                     if (d.file.mimeType.indexOf("application/pdf") >= 0) {
@@ -105,10 +106,10 @@ function updateUI(data, endpoint) {
                         fileType = "WordLogo";
                     }
 
-                    contentItem.innerHTML = '<div class="o365cs-base tab-pane fade" aria-hidden="true" id="list0" role="tabpanel" aria-labelledby="list0list">';
+                    contentItem.innerHTML = '';
                     contentItem.innerHTML += '<span class="ms-Icon ms-Icon--' + fileType + ' _1NTwdglUKLpHkf8sgkCoVl ms-svg-Icon" role="presentation" style="display: inline-block;"></span>';
                     contentItem.innerHTML += '<a href="' + d.webUrl + '">' + d.name + '</a> last modified: ' + d.lastModifiedDateTime + ' ' + d.size + 'B';
-                    contentItem.innerHTML += ' </div>'
+                    contentItem.innerHTML += '';
 
                     // contentItem.innerHTML += '<div class="o365cs-base" aria-hidden="true"><span class="ms-Icon ms-Icon--OutlookLogo _1NTwdglUKLpHkf8sgkCoVl ms-svg-Icon" role="presentation" style="display: inline-block;"></span></div>';
                     // contentItem.innerHTML += 'Filetype: <span class="ms-Icon ms-Icon--WordLogo _1NTwdglUKLpHkf8sgkCoVl ms-svg-Icon" role="presentation" style="display: inline-block;"></span><em class=\"result_flag flag_pdf\">pdf</em>' + d.file.mimeType;
