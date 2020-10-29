@@ -1,4 +1,4 @@
-// Last modified: 2020/10/29 15:45:13
+// Last modified: 2020/10/29 15:59:43
 
 // Select DOM elements to work with
 const welcomeDiv = document.getElementById("WelcomeMessage");
@@ -96,6 +96,7 @@ function updateUI(data, endpoint) {
                     contentItem.setAttribute("role", "tabpanel")
                     contentItem.setAttribute("aria-labelledby", "list" + i + "list")
                     contentItem.innerHTML = "<strong>Name: " + d.name + "</strong><br>last modified: " + d.lastModifiedDateTime + "<br>Size: " + d.size + "<br>";
+                    contentItem.innerHTML += '<div class="o365cs-base" aria-hidden="true"><span class="ms-Icon ms-Icon--OutlookLogo _1NTwdglUKLpHkf8sgkCoVl ms-svg-Icon" role="presentation" style="display: inline-block;"></span></div>';
                     contentItem.innerHTML += 'Filetype: <span class="ms-Icon ms-Icon--WordLogo _1NTwdglUKLpHkf8sgkCoVl ms-svg-Icon" role="presentation" style="display: inline-block;"></span><em class=\"result_flag flag_pdf\">pdf</em>' + d.file.mimeType;
                     contentItem.innerHTML += "<br><a href='" + d.webUrl + "'>Link</a><br>";
                     tabList.appendChild(contentItem); 
