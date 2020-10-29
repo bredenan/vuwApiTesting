@@ -1,4 +1,4 @@
-// Last modified: 2020/10/29 13:38:00
+// Last modified: 2020/10/29 15:27:53
 
 // Config object to be passed to Msal on creation.
 // For a full list of msal.js configuration parameters, 
@@ -47,9 +47,9 @@ const loginRequest = {
 const tokenRequest = {
     scopes: ["User.Read", "Mail.Read", "Files.Read", "Files.Read.All", "Files.ReadWrite", "Files.ReadWrite.All", "Sites.Read.All", "Sites.ReadWrite.All", 
     // "Team.ReadBasic.All", // requires admin consent
-    "TeamSettings.Read.All", 
+    // "TeamSettings.Read.All", 
     // "TeamSettings.ReadWrite.All", 
-    "User.Read.All", 
+    // "User.Read.All", 
     // "Directory.Read.All",  // requires user consent
     // "User.ReadWrite.All", 
     // "Directory.ReadWrite.All", 
