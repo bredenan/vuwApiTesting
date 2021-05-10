@@ -45,7 +45,7 @@ const loginRequest = {
 
 // Add here the scopes to request when obtaining an access token for MS Graph API
 const tokenRequest = {
-    scopes: ["User.Read", "Mail.Read", "Files.Read", "Files.Read.All", "Files.ReadWrite", "Files.ReadWrite.All", "Sites.Read.All", "Sites.ReadWrite.All", "Team.ReadBasic"
+    scopes: ["User.Read", "Mail.Read", "Files.Read", "Files.Read.All", "Files.ReadWrite", "Files.ReadWrite.All", "Sites.Read.All", "Sites.ReadWrite.All", "Team.ReadBasic.All"
     // "Team.ReadBasic.All", // requires admin consent
     // "TeamSettings.Read.All", 
     // "TeamSettings.ReadWrite.All", 
