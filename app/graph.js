@@ -12,6 +12,7 @@ function callMSGraph(endpoint, token, callback) {
     };
 
     console.log('request made to Graph API at: ' + new Date().toString());
+    console.log('Endpoint: ' + endpoint);
 
     fetch(endpoint, options)
         .then(response => { console.log(response); return response.json(); })
