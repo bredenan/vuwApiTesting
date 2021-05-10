@@ -118,6 +118,35 @@ function updateUI(data, endpoint) {
                 }
             });
         }
+    } else if (endpoint === graphConfig.graphTeamsEndpoint) {
+        if (data.value.length < 1) {
+            alert("Error getting recent documents!")
+        } else {
+            const tabList = document.getElementById("list-tab");
+            tabList.innerHTML = ''; // clear tabList at each readMail call
+            const tabContent = document.getElementById("nav-tabContent");
+
+            data.value.map((d, i) => {
+                if (i < 10) {
+
+                    const contentItem = document.createElement("div");
+                    contentItem.setAttribute("class", "o365cs-base tab-pane fade")
+                    contentItem.setAttribute("id", "list" + i)
+                    contentItem.setAttribute("role", "tabpanel")
+                    contentItem.setAttribute("aria-labelledby", "list" + i + "list")
+                    contentItem.setAttribute("aria-hidden", "true")
+
+                    contentItem.innerHTML = '';
+                    contentItem.innerHTML += '<p>' + d.displayName + ', ' + d.description + "," + d.id + '</a>';
+                    contentItem.innerHTML += '';
+
+                    // contentItem.innerHTML += '<div class="o365cs-base" aria-hidden="true"><span class="ms-Icon ms-Icon--OutlookLogo _1NTwdglUKLpHkf8sgkCoVl ms-svg-Icon" role="presentation" style="display: inline-block;"></span></div>';
+                    // contentItem.innerHTML += 'Filetype: <span class="ms-Icon ms-Icon--WordLogo _1NTwdglUKLpHkf8sgkCoVl ms-svg-Icon" role="presentation" style="display: inline-block;"></span><em class=\"result_flag flag_pdf\">pdf</em>' + d.file.mimeType;
+                    // contentItem.innerHTML += "<br><a href='" + d.webUrl + "'>Link</a><br>";
+                    tabList.appendChild(contentItem);
+                }
+            });
+        }
     } else {
         console.log("Unknown endpoint:" + endpoint);
         // try {
